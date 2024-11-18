@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SoundV Login</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/png" href="../images/Logo-icon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+	<style>
+		#username {
+			border-radius: 20px;
+		}
+
+		#password {
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+		}
+
+		.button-form {
+			border: 0px;
+			border-radius: 20px;
+			height: fit-content;
+			color: white;
+			text-align: center;
+		}
+
+		.button-login {
+			background-color: #0098D1;
+			padding: 9px;
+			font-weight: 600;
+		}
+
+		.button-signup {
+			padding: 10px;
+			background-color: #00D7F4;
+			font-size: 1.1em;
+			font-weight: 650;
+		}
+
+		.button-login:hover {
+			background-color: #09aae4;
+			box-shadow: 0 0 3px #00597a;
+		}
+
+		.button-signup:hover {
+			background-color: rgb(57, 202, 255);
+			box-shadow: 0 0 2px #00597a;
+		}
+
+		.input-group-text {
+			border-radius: 20px;
+			background-color: white;
+		}
+
+		.far {
+			width: 20px;
+			cursor: pointer;
+		}
+
+
+		#remember:hover {
+			box-shadow: 0 0 2px #00597a;
+		}
+	</style>
+</head>
+
+<script>
+	function checkdata() {
+		let email = $('#username').val().trim()
+		let pass = $('#password').val()
+		let mai = $("#username")
+		let pas = $("#password")
+		if(email == "admin" && pass == "123456"){
+			return true
+		}
+		if (email == "") {
+			$("#msg").css('color', 'red').text("Please enter your email")
+			mai.focus()
+			pas.select()
+			return false
+		}
+		let reg = /^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/;
+		if (!email.match(reg)) {
+			$("#msg").css('color', 'red').text("Your email is not correct")
+			mai.focus()
+			pas.select()
+			return false
+		}
+		if (pass == "") {
+			$("#msg").css('color', 'red').text("Please enter your password")
+			pas.focus()
+			pas.select()
+			return false
+		}
+
+		else if (pass.length < 6) {
+			$("#msg").css('color', 'red').text("Your password must contain at least 6 characters")
+			pas.focus()
+			pas.select()
+			return false
+		}
+		return true
+	}
+	function showpw() {
+		var x = document.getElementById("password");
+		if (x.type === "password") {
+			x.type = "text";
+			$('#showPassword').find('i').remove();
+			$('#showPassword').append('<i class="far fa-eye-slash" onclick="showpw() "></i>');
+		} else {
+			x.type = "password";
+			$('#showPassword').find('i').remove();
+			$('#showPassword').append('<i class="far fa-eye" onclick="showpw()"></i>');
+		}
+	}
+	$(function () {
+		$('#signin').click(evt => {
+			window.location.href = "signup.html"
+		})
+		$('#btnsubmit').click(evt => {
+			evt.preventDefault();
+			var usn = $('#username').val();
+			var pas = $('#password').val();
+			// $('#msg').text('aaa').css('color', 'red');
+			$.ajax({
+				type: 'POST',
+				url: '../php/login.php',
+				data: { user: usn, pass: pas },
+				dataType: 'json',
+				success: function (response) {
+					// console.log(response);
+					if (response.success) {
+						let user_id = response.user_id;
+						let username = response.username;
+
+						sessionStorage.setItem('isLogin', true);
+						sessionStorage.setItem('user_id', user_id);
+						sessionStorage.setItem('username', username);
+						sessionStorage.setItem('admin_rights', response.admin_rights);
+						let url = "../index.html"
+						window.location.href = url;
+
+					} else {
+						$('#msg').text('Invalid username or password.').css('color', 'red');
+					}
+				},
+				error: function () {
+					$('#msg').text('Error: Could not connect to server.').css('color', 'red');
+				}
+			})
+			return false;
+		})
+	})
+
+
+</script>
+
+<body>
+	<form action="" method="post">
+		<div class="container" id="login">
+			<div class="row mt-5 ">
+				<div class="col-12 d-flex justify-content-center">
+					<a href="../index.html">
+						<img class="logo" src="../images/Logo_Darker.png" style=" height: 3.1em; margin: 10px" alt="">
+					</a>
+				</div>
+
+			</div>
+			<div class="row mt-4 justify-content-center">
+				<div class=" col-lg-6 col-md-8 col-10">
+					<input class="form-control p-3" type="text" placeholder="Username" name="username" id="username">
+				</div>
+			</div>
+			<div class="row mt-3 d-flex justify-content-center">
+				<div class="col-lg-6 col-md-8 col-10">
+					<div class="input-group">
+						<input type="password" class="form-control p-3" placeholder="Password" name="password"
+							id="password">
+						<span class="input-group-text" id="showPassword">
+							<i class="far fa-eye" onclick="showpw()"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-3 d-flex justify-content-center">
+				<div class="col-lg-6 col-md-8 col-10">
+					<b id="msg" name="msg"></b>
+				</div>
+			</div>
+			<!-- <div class="row mt-3 d-flex justify-content-center">
+				<div class="col-lg-6 col-md-8 col-10">
+					<a href="#" class="text-dark text-decoration-none">
+						<b>Forgot password?</b>
+					</a>
+				</div>
+			</div> -->
+			<div class="row mt-3">
+				<div class="col-lg-3 col-md-2 col-1"></div>
+				<div class="col-lg-3 col-md-4 col-5">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="remember" id="remember">
+						<label class="form-check-label" for="remember" id="label-remember">
+							Remember me
+						</label>
+					</div>
+
+				</div>
+				<div class="col-lg-3 col-md-4 col-5 d-flex justify-content-end"> <button type="submit"
+						onclick="checkdata()" id="btnsubmit" class="button-form button-login col-7">Đăng nhập</button>
+				</div>
+				<div class="col-lg-3 col-md-2 col-1"></div>
+			</div>
+			<div class="row mt-2 d-flex justify-content-center">
+				<div class="col-lg-3 col-md-4 col-5">
+					<hr>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-12">
+					<div class="d-grid gap-2 col-lg-6 col-md-8 col-10 mx-auto text-center">
+						<b>Chưa có tài khoản?</b>
+						<button id="signin" class="button-form button-signup mt-3" type="button">ĐĂNG KÍ NGAY</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+
+
+</body>
+
+</html>

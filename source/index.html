@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>SoundV</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="shortcut icon" type="image/png" href="images/Logo-icon.png">
+	<script src="./script/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+	<script src="script/main_controller.js"></script>
+	<script src="script/index_controller.js"></script>
+	<style id="styleLogin">
+		#account #user-img {
+			height: 35px;
+			width: 35px;
+		}
+
+		#account .user-img {
+			/* margin-left: 700px; */
+			cursor: pointer;
+			margin-top: 10px;
+		}
+
+		#account .user-img img {
+			border-radius: 20px;
+		}
+
+		#account .user-icon {
+			height: 40px;
+			border-radius: 20px;
+			border-color: 20px;
+		}
+
+		#account .user-name {
+			color: white;
+			margin-left: 15px;
+			margin-top: 0px;
+			cursor: pointer;
+			margin-right: 30px;
+			font-weight: 500;
+			font-size: 1.1em;
+		}
+
+		#account .dropbtn {
+			background-color: transparent;
+			color: white;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+			opacity: 0;
+			display: none;
+
+			/* margin-top: 1px; */
+		}
+
+		#account .dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		#account .dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f1f1f1;
+			min-width: 160px;
+			/* overflow: auto; */
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+
+		#account .dropdown-content a {
+			color: black;
+			padding: 12px 16px;
+			/* margin-left: 20px;
+   			margin-right: 20px; */
+			text-decoration: none;
+			display: block;
+		}
+
+		.dropdown {
+			position: relative;
+			display: inline-block;
+			/* margin-right: 10px; */
+			border: solid 1px white;
+			border-radius: 20px;
+			padding-left: 20px;
+			padding-bottom: 8px;
+			margin-right: 19px;
+			transition: width 2s, border-color 0.4s;
+			margin-left: 230px;
+			margin-top: 10px;
+		}
+
+		.dropdown:hover {
+			cursor: pointer;
+			/* opacity: 1; */
+			box-shadow: 0px 0px 3px 2px #2e2a2a;
+			background: #407383;
+			transition: rgb(255, 255, 255)s, border-color 0.4s, box-shadow 0.4s, background 0.4s;
+
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f1f1f1;
+			list-style-type: none;
+			width: 30%;
+
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+
+		.dropdown-content a {
+			color: black;
+			padding: 12px 16px;
+			user-select: none;
+
+			/* margin-left: 20px;
+    margin-right: 20px; */
+			text-decoration: none;
+			display: block;
+		}
+
+		.dropdown a:hover {
+			background-color: #ddd;
+			width: 100%;
+		}
+
+		.search-bar input {
+			background: transparent;
+			/* flex: 1; */
+			border: 0;
+			outline: none;
+			padding: 2px 2px;
+			font-size: 20px;
+			color: white;
+		}
+	</style>
+</head>
+
+
+<body>
+
+	<nav class="navigation navbar" id="top-bar">
+		<div class="container-fluid">
+			<div class="search-bar main">
+				<input id="search-input" type="text" placeholder="Search" name="search">
+				<button id="search-btn" type="submit"><img src="./images/search.png"></button>
+			</div>
+			<div id="account" class="d-flex">
+				<button id="login" class="btnLogin-popup">Log in </button></a>
+				<button id="signup" class="btnSignup-popup">Sign up</button></a>
+			</div>
+		</div>
+		</div>
+	</nav>
+	<div class="container">
+		<nav class="menu">
+			<div class="side-bar">
+				<ul style="list-style-type: none;">
+					<li>
+						<a style="text-decoration: none;" href="javascript:location.reload()" style="cursor: pointer;"
+							class="logo">
+							<img src="./images/logo.png" alt="">
+						</a>
+					</li>
+					<li><a style="pointer-events: none; text-decoration: none;" href="#">
+							<span class="nav-item name">MUSIC</span>
+						</a>
+					<li><a style="text-decoration: none;" href="index.html">
+							<i class="fas fa-home"></i>
+							<span class="nav-item">Home</span>
+						</a>
+					</li>
+					<li><a style="text-decoration: none;" href="./html/songs.html">
+							<i class="fas fa-music"></i>
+							<span class="nav-item">Songs</span>
+						</a></li>
+					<li><a style="text-decoration: none;" href="./html/album.html">
+							<i class="fas fa-bars"></i>
+							<span class="nav-item">Albums</span>
+						</a></li>
+					<li><a style="text-decoration: none;" href="./html/artist.html">
+							<i class="fas fa-user"></i>
+							<span class="nav-item">Artists</span>
+						</a></li>
+					<li><a style="text-decoration: none;" href="./html/likesongs.html">
+							<i class="fas fa-heart"></i>
+							<span class="nav-item">Liked songs</span>
+						</a></li>
+					<li><a style="pointer-events: none; text-decoration: none;" href="#">
+							<span class="nav-item name">PLAYLIST</span>
+						</a></li>
+					<spl id="showplaylist">
+						<li><a style="text-decoration: none;" href="./html/plOMW.html">
+								<i class="fas fa-list"></i>
+								<span class="nav-item">On My Way</span>
+							</a></li>
+						<li><a style="text-decoration: none;" href="./html/plAttention.html">
+								<i class="fas fa-list"></i>
+								<span class="nav-item">Attention</span>
+							</a></li>
+						<li><a style="text-decoration: none;" href="./html/plTA.html">
+								<i class="fas fa-list"></i>
+								<span class="nav-item">Take Away</span>
+							</a></li>
+					</spl>
+					<div class="newplaylist">
+						<button class="btn-newplaylist">
+							<i class="fas fa-plus-circle"></i><i class="text-newplaylist">New Playlist</i></button>
+					</div>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="main">
+
+			<br>
+			<div class="container">
+				<h3>More of what you like</h3>
+				<h5 style="color: #827c7c">Suggestions based on what you're liked or played</h5>
+				<!-- tuyệt đối không sửa tên id, tên class. Thêm mới thì được. -->
+				<div class="row" id="list_songs">
+					<!-- sửa từ dòng này -->
+					<div data-id=${data.data[i].song_id} class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+						<div class="card mb-3">
+						<i class="fas fa-play-circle" id="10"></i>
+						<img src="./images/${img_song}" class="rounded-3" alt="...">
+						</div>
+						<div class="description">
+							<p style="color:white;">${data.data[i].song_title} <br> <i>${data.data[i].artist_name}</i></p>
+						</div>
+					</div>
+					<!-- tới dòng này -->
+				</div>
+			</div>
+		</div>
+		<div class="menu-chart">
+			<div class="container">
+				<div class="row">
+					<div class="col-4">
+						<div class="music-weekly">
+							<h4 style="color:white; text-align: left;">MUSIC WEEKLY</h4>
+							<img src="./images/musicweekly.jpg" alt="party img" width="200px" height="150px">
+							<p style="color: white; text-align: center;">English songs
+								<br> Updated 10/4/2023
+							</p>
+							<button class="btn-auto">
+								<i class="fas fa-play"></i><i class="text-auto">Auto Playlist</i></button>
+							<br>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="menu_song">
+							
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="chart_song">
+							<h4 style="color:white; text-align: left;">CHART</h4>
+							<div class="top-song">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	</div>
+	<script>
+
+		$(function () {
+			$(".menu_song").on("click", ".list-btn", function () {
+				let i_btn = $(this).find("i")
+
+				if (i_btn.css("color") == "rgb(0, 255, 255)") {
+					i_btn.css({
+						color: "grey",
+						transition: "color 0.2s"
+					});
+				} else {
+					i_btn.css({
+						color: "aqua",
+						transition: "color 0.2s"
+					});
+				}
+			})
+			$('#login').click(function () {
+				window.location.href = "html/login.html"
+			})
+			$('#signup').click(function () {
+				window.location.href = "html/signup.html"
+			})
+		})
+	</script>
+</body>

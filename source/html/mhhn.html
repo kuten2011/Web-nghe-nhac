@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SoundV</title>
+
+    <!--thay logo-->
+    <link rel="shortcut icon" href="images/Logo-icon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/mhhn.css">
+    
+    <script src="../script/mhhn.js" defer></script>
+    <link rel="shortcut icon" type="image/png" href="../images/Logo-icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../script/playsong_controller.js"></script>
+</head>
+
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <button onclick="history.back()">
+                <i class="bi bi-backspace-fill"></i>
+            </button>
+
+            <button class="liked">
+                <i class="btn-love fas fa-heart" style="color:grey;"></i>
+            </button>
+            <div class="details">
+                <div class="now-playing">PLAYING x OF y</div>
+                <div class="track-art"></div>
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+
+            <div class="slider_container">
+                <div class="current-time">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                <div class="total-duration">00:00</div>
+            </div>
+
+            <div class="slider_container">
+                <i class="fa fa-volume-down"></i>
+                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                <i class="fa fa-volume-up"></i>
+            </div>
+
+            <div class="buttons" >
+                <div class="random-track">
+                    <i
+                    class="bi bi-arrow-down-circle" 
+                    style="cursor: auto; -webkit-text-stroke: 1px; color:rgba(0,0,0,0);"
+                    ></i>
+                </div>
+                <div class="random-track" onclick="randomTrack()">
+                    <i class="fas fa-random fa-2x" title="random"></i>
+                </div>
+                <div class="prev-track" onclick="prevTrack()">
+                    <i class="fa fa-step-backward fa-2x"></i>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                    <i class="fa fa-play-circle fa-5x"></i>
+                </div>
+                <div class="next-track" onclick="nextTrack()">
+                    <i class="fa fa-step-forward fa-2x"></i>
+                </div>
+                <div class="repeat-track" onclick="repeatTrack()">
+                    <i class="fa fa-repeat fa-2x" title="Repeat"></i>
+                </div>
+                <div class="repeat-track pt-4" id="btndownload">
+                    <a href="../mp3/${data.data[i].song_id}.mp3" 
+                     download="${data.data[i].song_title}.mp3" 
+                     class="bi bi-arrow-down-circle" 
+                     title = "Download"
+                     style="-webkit-text-stroke: 1px"
+                     ></a>
+                </div>
+            </div>
+
+            <div id="wave">
+            </div>
+
+            <hr style="width: 80%; margin-left: 10%;">
+
+            <div class="inputas">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="comment" placeholder="Leave you comment here" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                    <button type="button" id="btntext"><i class="bi bi-send bi-sm"></i></button>
+                </div>
+                
+
+
+                <div class="rac">
+                    <button id="btn1" class="list-btn">
+                        <i class="bi bi-star-fill" style="color:grey;"></i>
+                        <i class="bi bi-star-fill" style="color:grey;"></i>
+                        <i class="bi bi-star-fill" style="color:grey;"></i>
+                        <i class="bi bi-star-fill" style="color:grey;"></i>
+                        <i class="bi bi-star-fill" style="color:grey;"></i>
+                    </button>
+                </div>
+
+                <ul class="list_cmt">
+                    <li class="fullcm">
+                        <img src="../images/Unknown.jpg" slt="...">
+                        <h5 class="fullcmm">
+                            Nguyen Van A
+                            <div class="ff">Hay vai luon</div>
+                        </h5>
+                    </li>
+
+                    <li class="fullcm">
+                        <img src="../images/Unknown.jpg" slt="...">
+                        <h5 class="fullcmm">
+                            Nguyen Van A
+                            <div class="ff">Hay vai luon</div>
+                        </h5>
+                    </li>
+
+                    <li class="fullcm">
+                        <img src="../images/Unknown.jpg" slt="...">
+                        <h5 class="fullcmm">
+                            Nguyen Van A
+                            <div class="ff">Hay vai luon</div>
+                        </h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

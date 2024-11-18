@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* font-family: sans-serif; */
+}
+.logo-img:hover{
+    box-shadow: 0 0 2px #00597a;
+}
+.container{
+    float:left;
+    background: #00232e;
+    /* background: linear-gradient(rgb(42, 38, 38),rgb(37, 53, 86),rgb(41, 41, 95)); */
+}
+body{
+    background-color: #00232e !important;
+    margin: 0;
+    height: 100%;
+}
+.side-bar{
+    position: fixed;
+    width: 220px;
+    float: left;
+    top: 0;
+    bottom: 0;
+    height: 800px;
+    left: 0;
+    background: #131925;
+}
+.logo{
+    text-align: center;
+    display: flex;  
+    transition: all 0.5s ease;
+}
+.logo img{
+    height: 2.3em;
+}
+
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: table;
+    width: 200px;
+    padding: 10px;
+}
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+    color: #00F0FF;
+}
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+    color: #00F0FF;
+}
+li:hover{
+    padding-left: 2px;
+    opacity: 0.5;
+}
+.newplaylist{
+    margin-top: 100px;
+    margin-left: 20px;
+}
+.btn-newplaylist{
+    cursor:pointer;
+    display:inline-block;
+    padding: 8px 12px;
+    background: #334f58;
+    border-radius: 20px;
+    color: #070606;
+    text-transform:uppercase;
+    line-height:20px;
+}
+.btn-newplaylist:hover{
+    background: #103d8b;
+}
+.fas.fa-plus-circle {
+    position: relative;
+    top: 0;
+    height: fit-content;
+    width: fit-content;
+}
+.text-newplaylist{
+    color: #00F0FF;
+    margin: 10px 5px 5px;
+    left: 10px;
+    font-style: normal !important;
+}
+.main{
+    float: left;
+    position: relative;
+    left: 210px;
+    background: #00232e;
+    height: 100%;
+    margin-left: 10px;
+}
+.main{
+    float: left;
+    position: relative;
+    left: 210px;
+    background: #00232e;
+    height: 100%;
+    margin-left: 10px;
+}
+.top-bar{
+    float: left;
+    position: relative;
+    left: 210px;
+    margin-left: 10px;
+}
+/* css thanh tìm kiếm */
+.search-bar{
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+}
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 2px 2px;
+    font-size: 20px;
+}
+::placeholder{
+    color: #cac7ff;
+}
+.search-bar button img{
+    width: 25px;
+}
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    height: 40px;
+    background: transparent;
+    cursor: pointer;
+}
+h3,h5{
+    color: #dfe9f5;
+}
+.card{
+    background: linear-gradient(rgb(42, 38, 38),rgb(37, 53, 86),rgb(41, 41, 95));
+    /* border-radius: 100px; */
+}
+.navigation .search-bar{
+    margin-top: 10px;
+}
+/* css nút login và signup */
+.navigation .btnLogin-popup{
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    width: 6em;
+    height: 50px;
+    padding: 10px 20px;
+}
+.btnLogin-popup{
+    float: left;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #1b2132;
+    margin-right: 10px;
+    margin-left: 230px;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color:rgb(37, 53, 86);
+}
+.navigation .btnSignup-popup{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    width: 6em;
+    height: 50px;
+    padding: 10px 20px;
+    color: #827c7c;
+}
+.btnSignup-popup{
+    background: #1b2132;
+
+}
+.navigation .btnSignup-popup:hover{
+    color: #fff;
+}
+.login-square{
+    width: 60%;
+}
+.card{
+    background: linear-gradient(rgb(42, 38, 38),rgb(37, 53, 86),rgb(41, 41, 95));
+    /* border-radius: 100px; */
+}
+.card{
+    cursor: pointer;
+    /* background: #00232e; */
+}
+.card-body{
+    background-color: #00232e;
+}
+.card-text{
+    color: #827c7c;
+}
+.card:hover{
+    box-shadow: 0px 0px 3px 2px #2e2a2a;
+    background: #3d3f3f; 
+}
+i{
+    color: #827c7c;
+}
+.img-circle{
+    background: #00232e;
+    border-radius: 50%;
+    height: 200px;
+}

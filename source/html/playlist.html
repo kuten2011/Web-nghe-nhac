@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>SoundV</title>
+	<link rel="stylesheet" href="../css/style-playlist.css">
+	<link rel="shortcut icon" type="image/png" href="../images/Logo-icon.png">
+	<script src="script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+	<script src="../script/main_controller.js"></script>
+</head>
+
+<body>
+	
+	<div class="container">
+		<nav class="menu">
+			<div class="row">
+				<div class="col-2">
+					<div class="side-bar">
+						<ul style="list-style-type: none;">
+							<li>
+								<a style="text-decoration: none;" href="../index.html" class="logo">
+									<img src="./images/logo.png" alt="">
+								</a>
+							</li>
+							<li><a style="pointer-events: none; text-decoration: none;" href="#">
+									<span class="nav-item name">MUSIC</span>
+								</a>
+							<li><a style="text-decoration: none;" href="../index.html">
+									<i class="fas fa-home"></i>
+									<span class="nav-item">Home</span>
+								</a>
+							</li>
+							<li><a style="text-decoration: none;" href="songs.html">
+									<i class="fas fa-music"></i>
+									<span class="nav-item">Songs</span>
+								</a></li>
+							<li><a style="text-decoration: none;" href="album.html">
+									<i class="fas fa-bars"></i>
+									<span class="nav-item">Albums</span>
+								</a></li>
+							<li><a style="text-decoration: none;" href="artist.html">
+									<i class="fas fa-user"></i>
+									<span class="nav-item">Artists</span>
+								</a></li>
+							<li><a style="text-decoration: none;" href="likesongs.html">
+									<i class="fas fa-heart"></i>
+									<span class="nav-item">Liked songs</span>
+								</a></li>
+							<li><a style="pointer-events: none; text-decoration: none;" href="#">
+									<span class="nav-item name">PLAYLIST</span>
+								</a></li>
+							<spl id="showplaylist">
+								<li><a style="text-decoration: none;" href="playlist.html">
+									<i class="fas fa-list"></i>
+									<span class="nav-item">On My Way</span>
+								  </a></li>
+								<li><a style="text-decoration: none;" href="#">
+									<i class="fas fa-list"></i>
+									<span class="nav-item">Attention</span>
+								  </a></li>
+								<li><a style="text-decoration: none;" href="#">
+								  <i class="fas fa-list"></i>
+								  <span class="nav-item">Take Away</span>
+								</a></li>
+							</spl>
+							<div class="newplaylist">
+								<button class="btn-newplaylist">
+									<i class="fas fa-plus-circle"></i><i class="text-newplaylist">New
+										Playlist</i></button>
+							</div>
+						</ul>
+					</div>
+				</div>
+				<div class="top-playlist col-2">
+					<h5>Playlist</h5>
+					<h3>On My Way</h3>
+					<table>
+						<tr id="user-playlist">Username, </tr>
+						<tr id="song">3 songs, </tr>
+						<tr id="time">10 min 57 sec</tr>
+					</table>
+				</div>
+				<div class="col-2">
+					<div class="chart_song">
+						<div class="top-song">
+							<li class="songItem">
+								<div class="container">
+									<div class="row">
+										<div class="col-1">
+											<h6>01</h6>	
+										</div>
+										<div class="col-1">
+											<div class="song-item">
+												<i class="fas fa-play-circle" id="10"></i>
+												<img src="../images/BTYL.jpg" alt="WFY">
+											</div>
+										</div>
+										<div class="col-7">
+											<h5>
+												Bật tình yêu lên
+												<div class="subtitle">Tăng Duy Tân, Hòa Minzy</div>
+											</h5>
+										</div>
+										<div class="col-1">
+											<div class="btns">
+												<button id="btnh" class="list-btn">
+													<i class="btn-love fas fa-heart" style="color:aqua;"></i></button>
+											</div>
+										</div>
+										<div class="col-1">
+											<div class="moreOption">
+												<button class="morebtn">
+													<i class="fas fa-ellipsis-h"></i>
+												</button>
+												<div id="myShowmore" class="showMore-content" style="width: fit-content">
+													<a href="#">Remove from Playlist</a>
+													<a href="#">Rating</a>
+													<a href="#">Download</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="songItem">
+								<div class="container">
+									<div class="row">
+										<div class="col-1">
+											<h6>02</h6>	
+										</div>
+										<div class="col-1">
+											<div class="song-item">
+												<i class="fas fa-play-circle" id="10"></i>
+												<img src="../images/Boombayah.jpg" alt="WFY">
+											</div>
+										</div>
+										<div class="col-7">
+											<h5>
+												BOOMBAYAH
+												<div class="subtitle">BLACKPINK</div>
+											</h5>
+										</div>
+										<div class="col-1">
+											<div class="btns">
+												<button id="btnh" class="list-btn">
+													<i class="btn-love fas fa-heart" style="color:aqua;"></i></button>
+											</div>
+										</div>
+										<div class="col-1">
+											<div class="moreOption">
+												<button class="morebtn">
+													<i class="fas fa-ellipsis-h"></i>
+												</button>
+												<div id="myShowmore" class="showMore-content">
+													<a href="#">Remove from Playlist</a>
+													<a href="#">Rating</a>
+													<a href="#">Download</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="songItem">
+								<div class="container">
+									<div class="row">
+										<div class="col-1">
+											<h6>03</h6>	
+										</div>
+										<div class="col-1">
+											<div class="song-item">
+												<i class="fas fa-play-circle" id="10"></i>
+												<img src="../images/attention.png" alt="WFY">
+											</div>
+										</div>
+										<div class="col-7">
+											<h5>
+												Attention
+												<div class="subtitle">Charlie Puth</div>
+											</h5>
+										</div>
+										<div class="col-1">
+											<div class="btns">
+												<button id="btnh" class="list-btn">
+													<i class="btn-love fas fa-heart" style="color:aqua;"></i></button>
+											</div>
+										</div>
+										<div class="col-1">
+											<div class="moreOption">
+												<button class="morebtn">
+													<i class="fas fa-ellipsis-h"></i>
+												</button>
+												<div id="myShowmore" class="showMore-content">
+													<a href="#">Remove from Playlist</a>
+													<a href="#">Rating</a>
+													<a href="#">Download</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</div>
+					</div>
+				</div>
+            </div>
+		</nav>
+	</div>
+	</div>
+	</div>
+
+	</div>
+	</div>
+	<script>
+		$(".list-btn").click(function () {
+			let i_btn = $(this).find("i")
+			if (i_btn.attr("style") == "color:aqua;") {
+				i_btn.attr("style", "color:grey;")
+			}
+			else {
+				i_btn.attr("style", "color:aqua;")
+			}
+		})
+	</script>
+</body>

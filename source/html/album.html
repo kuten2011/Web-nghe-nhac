@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SoundV</title>
+  <link rel="stylesheet" href="../css/style-album.css">
+  <script src="../script/script.js"></script>
+  <link rel="shortcut icon" type="image/png" href="../images/Logo-icon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <script src="../script/album_controller.js"></script>
+  <script src="../script/main_controller.js"></script>
+  <style>
+    #account #user-img {
+      height: 35px;
+      width: 35px;
+    }
+
+    #account .user-img {
+      /* margin-left: 700px; */
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #account .user-img img {
+      border-radius: 20px;
+    }
+
+    #account .user-icon {
+      height: 40px;
+      border-radius: 20px;
+      border-color: 20px;
+    }
+
+    #account .user-name {
+      color: white;
+      margin-left: 15px;
+      margin-top: 0px;
+      cursor: pointer;
+      margin-right: 30px;
+      font-weight: 500;
+      font-size: 1.1em;
+    }
+
+    #account .dropbtn {
+      background-color: transparent;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      display: none;
+
+      /* margin-top: 1px; */
+    }
+
+    #account .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    #account .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      /* overflow: auto; */
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    #account .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      /* margin-left: 20px;
+   			margin-right: 20px; */
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      /* margin-right: 10px; */
+      border: solid 1px white;
+      border-radius: 20px;
+      padding-left: 20px;
+      padding-bottom: 8px;
+      margin-right: 19px;
+      transition: width 2s, border-color 0.4s;
+      margin-left: 230px;
+      margin-top: 10px;
+    }
+
+    .dropdown:hover {
+      cursor: pointer;
+      /* opacity: 1; */
+      box-shadow: 0px 0px 3px 2px #2e2a2a;
+      background: #407383;
+      transition: rgb(255, 255, 255)s, border-color 0.4s, box-shadow 0.4s, background 0.4s;
+
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      list-style-type: none;
+      width: 30%;
+
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      user-select: none;
+
+      /* margin-left: 20px;
+    margin-right: 20px; */
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #ddd;
+      width: 100%;
+    }
+
+    .search-bar input {
+      background: transparent;
+      /* flex: 1; */
+      border: 0;
+      outline: none;
+      padding: 2px 2px;
+      font-size: 20px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navigation navbar" id="top-bar">
+    <div class="container-fluid">
+      <div class="search-bar main">
+        <input id="search-input" type="text" placeholder="Search" name="search">
+        <button id="search-btn" type="submit"><img src="../images/search.png"></button>
+      </div>
+      <div id="account" class="d-flex">
+        <button id="login" class="btnLogin-popup">Log in </button></a>
+        <button id="signup" class="btnSignup-popup">Sign up</button></a>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <div class="container">
+    <nav class="menu">
+      <div class="side-bar">
+        <ul style="list-style-type: none;">
+          <li>
+            <a style="text-decoration: none;" href="../index.html" class="logo">
+              <img src="../images/logo.png" alt="">
+            </a>
+          </li>
+          <li><a style="pointer-events: none; text-decoration: none;" href="#">
+              <span class="nav-item name">MUSIC</span>
+            </a>
+          <li><a style="text-decoration: none;" href="../index.html">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          <li><a style="text-decoration: none;" href="songs.html">
+              <i class="fas fa-music"></i>
+              <span class="nav-item">Songs</span>
+            </a></li>
+          <li><a style="text-decoration: none;" href="album.html">
+              <i class="fas fa-bars"></i>
+              <span class="nav-item">Albums</span>
+            </a></li>
+          <li><a style="text-decoration: none;" href="artist.html">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Artists</span>
+            </a></li>
+          <li><a style="text-decoration: none;" href="likesongs.html">
+              <i class="fas fa-heart"></i>
+              <span class="nav-item">Liked songs</span>
+            </a></li>
+          <li><a style="pointer-events: none; text-decoration: none;" href="#">
+              <span class="nav-item name">PLAYLIST</span>
+            </a></li>
+          <spl id="showplaylist">
+            <li><a style="text-decoration: none;" href="playlist.html">
+                <i class="fas fa-list"></i>
+                <span class="nav-item">On My Way</span>
+              </a></li>
+            <li><a style="text-decoration: none;" href="#">
+                <i class="fas fa-list"></i>
+                <span class="nav-item">Attention</span>
+              </a></li>
+            <li><a style="text-decoration: none;" href="#">
+                <i class="fas fa-list"></i>
+                <span class="nav-item">Take Away</span>
+              </a></li>
+          </spl>
+          <div class="newplaylist">
+            <button class="btn-newplaylist">
+              <i class="fas fa-plus-circle"></i><i class="text-newplaylist">New Playlist</i></button>
+          </div>
+        </ul>
+      </div>
+      <div class="main">
+        <br>
+        <div class="container">
+          <h3>Albums</h3>
+          <div id="list_albums" class="row">
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000001.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Youth</h5>
+                  <p class="card-text">BTS</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000002.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">More & More</h5>
+                  <p class="card-text">TWICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000003.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">ME</h5>
+                  <p class="card-text">Jisoo</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000004.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Born Pink</h5>
+                  <p class="card-text">Blackpink</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000005.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Nine Track Mind</h5>
+                  <p class="card-text">Charlie Puth</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000006.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Love Yourself</h5>
+                  <p class="card-text">BTS</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000007.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Wings</h5>
+                  <p class="card-text">BTS</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000008.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Stand Up</h5>
+                  <p class="card-text">BIGBANG</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000009.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">SƠN TÙNG M-TP</h5>
+                  <p class="card-text">SƠN TÙNG M-TP</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000010.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">22</h5>
+                  <p class="card-text">MONO</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000011.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">LOVER</h5>
+                  <p class="card-text">Taylor Swift</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-music col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card mb-3">
+                <i class="fas fa-play-circle" id="10"></i>
+                <img src="../images/album_1000012.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Wild Dreams</h5>
+                  <p class="card-text">Westlife</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</body>

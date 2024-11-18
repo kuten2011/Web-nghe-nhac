@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SoundV Sign up</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Load Google API Library -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<link rel="shortcut icon" type="image/png" href="../images/Logo-icon.png">
+	<!-- Google API Client ID -->
+	<meta name="google-signin-client_id" content="YOUR_CLIENT_ID_HERE">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+	<script src="../script/signup.js"></script>
+	<style>
+		.button-form {
+			border: 0px;
+			border-radius: 20px;
+			height: fit-content;
+			width: 100%;
+			color: white;
+			text-align: center;
+			padding: 10px;
+			background-color: #00D7F4;
+			font-size: 1.1em;
+			font-weight: 650;
+		}
+
+		.empty-signup {
+			height: 10em;
+		}
+
+		.google-button {
+			padding: 9px;
+			font-weight: 600;
+			cursor: pointer;
+		}
+
+		.input {
+			border-radius: 20px;
+		}
+
+		.login-redirect {
+			color: #00cfea;
+			margin-left: 5px;
+		}
+
+		.login-redirect:hover {
+			color: #0098D1;
+		}
+
+		.bold-text {
+			font-weight: bold;
+		}
+		.input-group-text {
+			border-radius: 20px;
+			background-color: white;
+		}
+		.pass-input {
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Google Sign-in button -->
+
+	<div class="container col-lg-5 col-md-6 col-8">
+
+		<div class="row mt-5 ">
+			<div class="col-12 d-flex justify-content-center">
+				<a href="../index.html">
+					<img class="logo" src="../images/Logo_Darker.png" style=" height: 3.1em; margin: 10px" alt="">
+				</a>
+			</div>
+		</div>
+
+		<div class="bold-text row mt-4">
+			<div>Your Email:</div>
+		</div>
+		<div class="row">
+			<div>
+				<input class="form-control p-3 input mt-1" type="text" placeholder="Your Email" name="email" id="email">
+			</div>
+		</div>
+		<div id="msgEmail" class="mt-2 text-danger fw-bold"></div>
+		<div class="bold-text row mt-4">
+			<div>Password:</div>
+		</div>
+		<div class="row">
+			<div class="input-group">
+				<input type="password" class="form-control pass-input p-3" placeholder="Enter password" name="password"
+					id="password">
+				<span class="input-group-text" id="showPassword">
+					<i class="far fa-eye"></i>
+				</span>
+			</div>
+		</div>
+		<div id="msgPassword" class="mt-2 text-danger fw-bold"></div>
+		<div class="bold-text row mt-4">
+			<div>Confirm password:</div>
+		</div>
+		<div class="row">
+			<div class="input-group">
+				<input type="password" class="form-control pass-input p-3" placeholder="Enter password again." name="cfpassword"
+					id="cfpassword">
+				<span class="input-group-text" id="showCfPassword">
+					<i class="far fa-eye"></i>
+				</span>
+			</div>
+		</div>
+		<div id="msgCfpassword" class="mt-2 text-danger fw-bold"></div>
+		<div class="bold-text row mt-4">
+			<div>Username:</div>
+		</div>
+		<div class="row">
+			<div>
+
+				<input class="form-control p-3 input mt-1" type="text" placeholder="Enter username" name="username"
+					id="username">
+			</div>
+		</div>
+		<div id="msgUsername" class="mt-2 text-danger fw-bold"></div>
+		<div class="bold-text row mt-4">
+			<div>Date of birth</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<div class="mb-2 mt-3">Day</div>
+				<input class="form-control p-3 input" type="text" placeholder="DD" name="day" id="day">
+			</div>
+			<div class="col-5">
+				<div class="mb-2 mt-3">Month</div>
+				<select class="form-select p-3 input " placeholder="Month" name="month" id="month">
+					<option value="" disabled selected>Month</option>
+					<option value="01">January</option>
+					<option value="02">February</option>
+					<option value="03">March</option>
+					<option value="04">April</option>
+					<option value="05">May</option>
+					<option value="06">June</option>
+					<option value="07">July</option>
+					<option value="08">August</option>
+					<option value="09">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+				</select>
+			</div>
+			<div class="col-4">
+				<div class="mb-2 mt-3">Year</div>
+				<input class="form-control p-3 input" type="text" placeholder="YYYY" name="year" id="year">
+			</div>
+			<div id="msgDate" class="mt-2 text-danger fw-bold"></div>
+		</div>
+		<div class="row mt-4">
+			<div class="col-3 bold-text">Gender:</div>
+			<div class="col-3">
+				<input type="radio" name="gender" id="male" value="male">
+				<label for="male">Male</label>
+			</div>
+			<div class="col-3">
+				<input type="radio" name="gender" id="female" value="female">
+				<label for="female">Female</label>
+			</div>
+		</div>
+		<div id="msgGender" class="mt-2 text-danger fw-bold"></div>
+		<div id="msg" class="mt-2 text-success fw-bold"></div>
+		<div class="row d-flex justify-content-center mt-4">
+			<div class="col-8 mt-4 ">
+				<button class="button-form" type="submit" id="signup">SIGN UP</button>
+			</div>
+
+		</div>
+		<div class="row mt-2">
+			<div class="col-12  d-flex justify-content-center mt-2">
+				<p>Have an account?<a href="./login.html" class="login-redirect">Log in</a>.</p>
+			</div>
+		</div>
+		<div class="empty-signup"></div>
+
+	</div>
+	<!-- Script to handle sign-in -->
+
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* font-family: sans-serif; */
+}
+@media (max-width: 800px) {
+    .flex-item-right, .flex-item-left {
+        flex: 100%;
+    }
+}
+.logo-img:hover{
+    box-shadow: 0 0 2px #00597a;
+}
+.container{
+    float:left;
+    background: #00232e;
+    /* background: linear-gradient(rgb(42, 38, 38),rgb(37, 53, 86),rgb(41, 41, 95)); */
+}
+body{
+    background-color: #00232e !important;
+    margin: 0;
+    height: 100%;
+}
+/* css side bar                                       */
+.side-bar{
+    position: fixed;
+    width: 220px;
+    float: left;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: #131925;
+}
+.logo{
+    text-align: center;
+    display: flex;  
+    transition: all 0.5s ease;
+    margin-top: 10px;
+}
+.logo img{
+    height: 2.3em;
+}
+
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: table;
+    width: 200px;
+    padding: 10px;
+}
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+    color: #00F0FF;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+    color: #00F0FF;
+}
+.side-bar li:hover{
+    padding-left: 2px;
+    opacity: 0.5;
+}
+.newplaylist{
+    margin-top: 100px;
+    margin-left: 20px;
+}
+.btn-newplaylist{
+    cursor:pointer;
+    display:inline-block;
+    padding: 8px 12px;
+    background: #334f58;
+    border-radius: 20px;
+    color: #070606;
+    text-transform:uppercase;
+    line-height:20px;
+}
+.btn-newplaylist:hover{
+    background: #103d8b;
+}
+.fas.fa-plus-circle {
+    position: relative;
+    top: 0;
+    height: fit-content;
+    width: fit-content;
+}
+.text-newplaylist{
+    color: #00F0FF;
+    margin: 10px 5px 5px;
+    left: 10px;
+    font-style: normal !important;
+}
+.main{
+    float: left;
+    position: relative;
+    left: 210px;
+    background: #00232e;
+    height: 100%;
+    margin-left: 10px;
+}
+.top-bar{
+    float: left;
+    position: relative;
+    left: 210px;
+    margin-left: 10px;
+}
+h3,h5{
+    color: #dfe9f5;
+}
+
+.row col-1{
+    padding-right: 10px;
+}
+/* css phan playlist */
+.row .top-playlist{
+    color: black;
+    background: rgb(124, 145, 145);
+    height: 300px;
+    width: 100%;
+    margin-left: 215px;
+}
+
+.row .songs-playlist{
+    padding-top: 10px;
+    color: white;
+    width: 100%;
+}
+.top-playlist{
+    width: 100%;
+    padding-top: 100px;
+}
+
+.top-playlist h3{
+    font-size: 100px;
+}
+
+#user-playlist{
+    padding-right: 100px;
+}
+/* css phan bai hat trong playlist */
+.chart_song{
+    margin-left: 260px;
+    width: 180px;
+    padding-top: 20px;
+}
+
+.chart_song .songItem{
+    position: relative;
+    list-style-type: none;
+    padding: 5px 0px 5px 1px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s linear;
+    border-bottom: 2px solid #170f23;
+}
+.chart_song .songItem h6{
+    font-size: 20px;
+    font-weight: 600;
+    color: #b2bfe2;
+}
+.chart_song .songItem img{
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    object-fit: cover;
+}
+.chart_song .songItem h5{
+    font-size: 15px;
+    margin-left: 15px;
+}
+.chart_song .subtitle{
+    font-size: 12px;
+    color:#827c7c;
+}
+.chart_song .songItem .bi{
+    position: absolute;
+    font-size: 16px;
+}
+.chart_song .song-item .fas{
+    position: absolute;
+    top: 80%;
+    left: 13%;
+    transform: translate(-50%, -48%);
+    -ms-transform: translate(-40%, -50%);
+    background-color: transparent;
+    color: white;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s linear;
+    opacity: 0;
+}
+.chart_song .songItem .container:hover{
+    background: #1d3c3c;
+}
+.chart_song .song-item:hover .fas{
+    opacity: 1;
+}
+.btn-icon{
+    display: flex;
+    flex-direction: column;
+}
+.chart_song .songItem h6{
+    font-size: 20px;
+    font-weight: 600;
+    color: #b2bfe2;
+}
+
+.top-song{
+    width: 1200px;
+}
+/* css button more option */
+.morebtn {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+.moreOption {
+    position: relative;
+    display: inline-block;
+}
+
+.showMore-content {
+    display: none;
+    position: absolute;
+    background-color: #1ea893;
+    z-index: 1;
+}
+
+.showMore-content a {
+    color: #000;
+    font-weight: bold;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.showMore-content a:hover {
+    background-color: #70d7b0;
+    color: #000;
+}
+
+.moreOption:hover .showMore-content {
+    display: block;
+}
+.container .list-btn{
+    background: transparent;
+}
+
